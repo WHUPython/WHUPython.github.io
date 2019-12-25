@@ -197,10 +197,10 @@
 
 
   
-    <article id="post-2 Data Structures " class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Going Further with functions" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/25/2%20Data%20Structures%20/" class="article-date">
-  <time datetime="2019-12-25T01:30:13.922Z" itemprop="datePublished">2019-12-25</time>
+    <a href="/2019/12/24/Going%20Further%20with%20functions/" class="article-date">
+  <time datetime="2019-12-24T13:07:51.000Z" itemprop="datePublished">2019-12-24</time>
 </a>
     
   </div>
@@ -211,7 +211,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/25/2%20Data%20Structures%20/">2 Data Structures </a>
+      <a class="article-title" href="/2019/12/24/Going%20Further%20with%20functions/">&#39;Going Further with Functions&#39;</a>
     </h1>
   
 
@@ -219,51 +219,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-      
-<!-- Table of Contents -->
-
-
-
-        <h1 id="Data-Structure"><a href="#Data-Structure" class="headerlink" title="Data Structure"></a>Data Structure</h1><ul>
-<li>高效地组织数据</li>
-<li>创建二维数组</li>
-</ul>
-<h2 id="数据组织"><a href="#数据组织" class="headerlink" title="数据组织"></a>数据组织</h2><p>铭记“程序模型是客观世界的”会对某个具体的客观事物选择合适的表示方式大有裨益。这想想或许是非常直接的，但实际上却需要大量的考量才能达到目的。</p>
-<p>刚开始的时候，你也许会为应用选择合适的模型绞尽脑汁，但这个过程会帮助你成为一个更好的程序猿。当然，你也可以遵从前人指导，但我不推荐这样。解决编程难题是必经之路。在你编程做决定的时候，会对你的程序有一个更加全面的理解。</p>
-<p>在你的Python之路上，你会适应日益复杂的数据结构。目前，我们创建的结构有<code>list</code>和<code>dict</code>，他们都是不可改变的(immutable)，不可改变的还有数字(numbers)和字符串(strings)。当然，你也可以在你自己的数据结构中使用list, tuples, dicts或其他复杂数据结构。</p>
-<p>在对象中数据结构也是相当重要的。通过一个<code>class</code>语句定义一类对象的行为。class语句定义了类实例的行为–<code>method</code> ，用户可以调用它们来产生某种行为。Each instance has its own namespace though, which makes it appear like a data structure with behaviors common to all members of its class.    </p>
-<h3 id="Handling-Multi-Dimensional-Arrays-in-Python"><a href="#Handling-Multi-Dimensional-Arrays-in-Python" class="headerlink" title="Handling Multi-Dimensional Arrays in Python"></a>Handling Multi-Dimensional Arrays in Python</h3><p>Python中，我们一般通过从创建类来执行任务。索引(indexing)是利用<code>__getitem__</code>方法完成的。</p>
-<p><strong>整数(integer)和切片<code>int slice</code></strong>是可以用做下标索引的<strong>唯二</strong>类型(type)。一般不直接和slice对象进行接触，而是通过冒号分割的多下标方式进行访问(for which 冒号也被称为切片符号)。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">GI</span>:</span></span><br><span class="line"><span class="meta">... </span><span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, *args, **kw)</span>:</span></span><br><span class="line">    ... print(<span class="string">"Args:"</span>, args)</span><br><span class="line">    ... print(<span class="string">"Kws: "</span>, kw)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>gi = GI()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>gi[<span class="number">0</span>]</span><br><span class="line">Args: (<span class="number">0</span>,)</span><br><span class="line">Kws: &#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>gi[<span class="number">0</span>:<span class="number">1</span>]</span><br><span class="line">Args: (slice(<span class="number">0</span>, <span class="number">1</span>, <span class="literal">None</span>),)</span><br><span class="line">Kws: &#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>gi[<span class="number">0</span>:<span class="number">10</span>:<span class="number">-2</span>]</span><br><span class="line">Args: (slice(<span class="number">0</span>, <span class="number">10</span>, <span class="number">-2</span>),)</span><br><span class="line">Kws: &#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>gi[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">Args: ((<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>),)</span><br><span class="line">Kws: &#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>gi[<span class="number">1</span>:<span class="number">2</span>:<span class="number">3</span>, <span class="number">4</span>:<span class="number">5</span>:<span class="number">6</span>]</span><br><span class="line">Args: ((slice(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>), slice(<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)),)</span><br><span class="line">Kws: &#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>gi[<span class="number">1</span>, <span class="number">2</span>:<span class="number">3</span>, <span class="number">4</span>:<span class="number">5</span>:<span class="number">6</span>]</span><br><span class="line">Args: ((<span class="number">1</span>, slice(<span class="number">2</span>, <span class="number">3</span>, <span class="literal">None</span>), slice(<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)),)</span><br><span class="line">Kws: &#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>gi[(<span class="number">1</span>, <span class="number">2</span>:<span class="number">3</span>, <span class="number">4</span>:<span class="number">5</span>:<span class="number">6</span>)]</span><br><span class="line">File <span class="string">"&lt;console&gt;"</span>, line <span class="number">1</span></span><br><span class="line">gi[(<span class="number">1</span>, <span class="number">2</span>:<span class="number">3</span>, <span class="number">4</span>:<span class="number">5</span>:<span class="number">6</span>)]</span><br><span class="line">^</span><br><span class="line">SyntaxError: invalid syntax</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>(<span class="number">1</span>, <span class="number">2</span>:<span class="number">3</span>, <span class="number">4</span>:<span class="number">5</span>:<span class="number">6</span>)</span><br><span class="line">File <span class="string">"&lt;console&gt;"</span>, line <span class="number">1</span></span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>:<span class="number">3</span>, <span class="number">4</span>:<span class="number">5</span>:<span class="number">6</span>)</span><br><span class="line">^</span><br><span class="line">SyntaxError: invalid syntax</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>切片只能是下标表达式(subscripting expressions)参数元组（tuple）的最上层元素（即元组的元素），对元组加引号或者在下标表达式的括号外面使用类似的元组都会报错。</p>
-<p>解释器把 整数直接传递给<code>__getitem__()</code>，但是对由冒号分割的整数，会先创建一个切片对象（slice object），再把切片对象传递给<code>__getitem__()</code>方法。上面的代码展示了可以用多个切片对象作为下标，<code>__getitem__()</code>方法会收到一个切片对象的元组。</p>
-<p>小结一下，上面的要点如下</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj[M] == obj.__getitem__(M)</span><br><span class="line">当M为整数或者切片时，上面等式都成立。</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj[M:N] == obj.__getitem__(slice(M, N, <span class="literal">None</span>)) </span><br><span class="line"><span class="keyword">and</span></span><br><span class="line">obj[M:N:S] == obj.__getitem__(slice(M, N, S))</span><br></pre></td></tr></table></figure>
-
-<p>方括号下标访问都会被代理到<code>__getitem__</code>、 <code>__setitem__</code>方法上去，这就给了我们很大的想象空间：我们可以在类的这两个方法上恣意妄为。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">array</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, M, N)</span>:</span></span><br><span class="line">        self._data = [<span class="number">0</span>] * M * N</span><br><span class="line">        self._rows = M</span><br><span class="line">        self._cols = N</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, key)</span>:</span></span><br><span class="line">        <span class="string">"""retrieve elements from self._data"""</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">   	<span class="function"><span class="keyword">def</span> <span class="title">__setitem__</span><span class="params">(self, key, value)</span>:</span></span><br><span class="line">        <span class="string">"""Set value to place key in self._data"""</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">   	<span class="function"><span class="keyword">def</span> <span class="title">__delitem__</span><span class="params">(self, key)</span>:</span></span><br><span class="line">        <span class="string">"""Amos: delete an item from self._data"""</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="课后练习Quiz"><a href="#课后练习Quiz" class="headerlink" title="课后练习Quiz"></a>课后练习Quiz</h1><h2 id="Data-Structures-Quiz-1"><a href="#Data-Structures-Quiz-1" class="headerlink" title="Data Structures - Quiz 1"></a>Data Structures - Quiz 1</h2><p>Which data types can be used to index a sequence?</p>
-<p>int and slice</p>
-<p><strong>Grading Criteria:</strong> Student should show a more sophisticated understanding of indexing.</p>
-<p>What is the best-known third-party package for numerical programming in Python?</p>
-<p>Numpy.</p>
-<p><strong>Grading Criteria:</strong> Student shows developing awareness of the Python ecosystem and its third-party libraries, especially where intensive numeric computing is concerned.</p>
-<p>Which method of o is called when evaluating o[i] (o and i should be part of the answer)?</p>
-<p><strong>getitem</strong>()</p>
-<p><strong>Grading Criteria:</strong> Student should show increased understanding of how syntax triggers special named methods.</p>
-
+        <h1 id="Going-Further-with-functions-函数也是对象"><a href="#Going-Further-with-functions-函数也是对象" class="headerlink" title="Going Further with functions 函数也是对象"></a>Going Further with functions 函数也是对象</h1><p>Python里的所有东西都是对象，函数也不例外。但和其他对象不同，函数不是由调用类生成的，而是由def 语句，告诉编译器来把接下来的代码编译好并绑定到函数名上。</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/12/24/Going%20Further%20with%20functions/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://github.com/whupython/2019/12/25/2%20Data%20Structures%20/" data-id="ck4kmfllu0000l4s38t6ta9ew" class="article-share-link">Share</a>
+      <a data-url="http://github.com/whupython/2019/12/24/Going%20Further%20with%20functions/" data-id="ck4jwxtqx0000i0s36xb7bjjn" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hardlab/" rel="tag">hardlab</a></li></ul>
+
     </footer>
   </div>
   
@@ -275,7 +244,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -290,10 +259,6 @@
         
           <li>
             <a href="/2019/12/25/unittest_demo/">unittest_demo</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/25/2%20Data%20Structures%20/">2 Data Structures </a>
           </li>
         
           <li>
@@ -317,7 +282,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
