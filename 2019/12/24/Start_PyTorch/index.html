@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>&#39;Start PyTorch&#39; | Yet A Python Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Start PyTorch-whale  This article helps starters begin PyTorch programming as soon as possible. It assumes readers to have basic grasps on back propogation(bp), tensorflow programming and optional sta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&#39;Start PyTorch&#39;">
+<meta property="og:url" content="http://github.com/whupython/2019/12/24/Start_PyTorch/index.html">
+<meta property="og:site_name" content="Yet A Python Group">
+<meta property="og:description" content="Start PyTorch-whale  This article helps starters begin PyTorch programming as soon as possible. It assumes readers to have basic grasps on back propogation(bp), tensorflow programming and optional sta">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-24T13:07:51.000Z">
+<meta property="article:modified_time" content="2019-12-25T02:30:28.455Z">
+<meta property="article:tag" content="hardlab">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Yet A Python Group" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Yet A Python Group</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">武汉大学Python小组</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">历史文章</a>
+        
+          <a class="main-nav-link" href="/intro-python">测试page</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://github.com/whupython"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Start_PyTorch" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/24/Start_PyTorch/" class="article-date">
+  <time datetime="2019-12-24T13:07:51.000Z" itemprop="datePublished">2019-12-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      &#39;Start PyTorch&#39;
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+<!-- Table of Contents -->
+
+
+
+        <h1 id="Start-PyTorch"><a href="#Start-PyTorch" class="headerlink" title="Start PyTorch"></a>Start PyTorch</h1><p>-whale</p>
+<blockquote>
+<p>This article helps starters begin PyTorch programming as soon as possible. It assumes readers to have basic grasps on back propogation(bp), tensorflow programming and optional static and dynamic graph.</p>
+</blockquote>
+<a id="more"></a>
+
+<p>PyTorch is the most widely used （deep learning）DL framework in research field as a result of its dynamic graph feature. It enables users to programm in a pythonic way.</p>
+<p>I think the best way to start PyTorch programming is to read official docs. So this passage might not be a good choice for some people.</p>
+<p>PyTorch is very simple, just like python programming.</p>
+<p>Let ‘s reflect what ingredients a dl framework should have.</p>
+<ul>
+<li>a <strong>base datatype</strong> containing weight and bp gradients, which can be regarged as model’s parameters</li>
+<li><strong>loss functions</strong> to compute model’s outputs deviation to labels</li>
+<li><strong>optimizers</strong> responsible to compute parameters’ gradients and then modify(update) them</li>
+</ul>
+<p>Given the above three componets, model can be built, loss computed, model’s parameters updated. Let’s proceed to see how to accomplish those in PyTorch.</p>
+<h2 id="Base-DataType—-torch-Tensor"><a href="#Base-DataType—-torch-Tensor" class="headerlink" title="Base DataType— torch.Tensor"></a>Base DataType— <strong>torch.Tensor</strong></h2><p><code>torch.Tensor</code> is PyTorch’s base datatype.</p>
+<p>How to convert numpy array to <code>torch.Tensor</code> ? Very simple <code>torTensor = tor.as_tenor(a_numpy_array)</code>.</p>
+<p>How to use this to build a model(suppose linear model: $y = Wx + b$ )?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">W, b&#x3D;torch.random(1), torch.random(1)</span><br><span class="line">x &#x3D; tor.as_tensor(x_ndarray)</span><br><span class="line">y &#x3D; W * x + b</span><br></pre></td></tr></table></figure>
+
+<p>That’s it, very simple. We can use common python operators to connect PyTorch <strong>base datatype</strong>, and its backward mechanism will help you manage each varaible’s bp gradients and store it to each <strong>tensor’s</strong> <strong>.grad</strong> attribute. You also can directly call its <code>.backward()</code> method with a gradient param to change its <strong>grad</strong> attribute’s content(value).</p>
+<h2 id="loss-fucntions-torch-nn-MSE"><a href="#loss-fucntions-torch-nn-MSE" class="headerlink" title="loss fucntions: torch.nn.MSE"></a>loss fucntions<strong>: torch.nn.MSE</strong></h2><p>torch.nn module has many pre-defined loss function. <strong>nn.MSE</strong> is an example. Loss functions take as inputs two params, model’s outputs and label, then calcuate, return their deviation tensor <strong>L</strong>.</p>
+<p>One important thing is that when you call <strong>L.backward()</strong>, its default argument is 1, and the backward operation will back propogate the gradients to the very begining tensor. And, as a result, for tensors on the back way, their <strong>grad</strong> attribute will be changed.</p>
+<h2 id="optimizer-torch-optim"><a href="#optimizer-torch-optim" class="headerlink" title="optimizer: torch.optim"></a>optimizer: <strong>torch.optim</strong></h2><p>Aformentioned two componets can be used to created model, calculate parameters’ gradients. <strong>torch.optim</strong> can serves to update parameters. let’s see a code snippet copied from the official site.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#96;import&#96; &#96;torch.optim as optim&#96; &#96;# create your optimizer&#96;&#96;optimizer &#96;&#96;&#x3D;&#96; &#96;optim.SGD(net.parameters(), lr&#96;&#96;&#x3D;&#96;&#96;0.01&#96;&#96;)&#96; &#96;# in your training loop:&#96;&#96;optimizer.zero_grad()   &#96;&#96;# zero the gradient buffers&#96;&#96;output &#96;&#96;&#x3D;&#96; &#96;net(&#96;&#96;input&#96;&#96;)&#96; &#96;loss &#96;&#96;&#x3D;&#96; &#96;criterion(output, target)&#96;&#96;loss.backward()&#96;&#96;optimizer.step()    &#96;&#96;# Does the update&#96;</span><br></pre></td></tr></table></figure>
+
+<p>It initialize an optimizer with model’s paramters as input, specifing what tensors the optimizer should manage(update). After loss function’s loss calcuating and <strong>update</strong> tensors’ grad attribute. <strong>optimizer.step()</strong>is called to update params it manage.</p>
+<p>Of course, SGD is not the only optimizer torch supports, for more refer the official site.</p>
+<p>Also, the last two componets can be customized in PyTorch.</p>
+<hr>
+<div align=middle>暮鼓晨钟，惊醒世间名利客；经声佛号，唤回苦海梦迷人。</div>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://github.com/whupython/2019/12/24/Start_PyTorch/" data-id="ck4knzpng0000cws3037v098z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hardlab/" rel="tag">hardlab</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/12/24/Going%20Further%20with%20functions/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          &#39;Going Further with Functions&#39;
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/24/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/25/unittest_demo/">unittest_demo</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/25/2%20Data%20Structures%20/">2 Data Structures </a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/24/Going%20Further%20with%20functions/">&#39;Going Further with Functions&#39;</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/24/Start_PyTorch/">&#39;Start PyTorch&#39;</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/24/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hardlab/" rel="tag">hardlab</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hardlab/" style="font-size: 10px;">hardlab</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Yet A Python Group<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">历史文章</a>
+  
+    <a href="/intro-python" class="mobile-nav-link">测试page</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
