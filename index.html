@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/25/unittest_demo/">unittest_demo</a>
+      <a class="article-title" href="/2019/12/25/unittest_demo/">Unittest_demo</a>
     </h1>
   
 
@@ -93,97 +93,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-      
-<!-- Table of Contents -->
-
-
-
         <h1 id="Unit-Test"><a href="#Unit-Test" class="headerlink" title="Unit Test"></a>Unit Test</h1><p>在Python进阶之路上，有必要了解Python是如何进行代码测试。测试驱动开发是现代软件开发的方法之一，受到很多人的追捧。<a href="https://www.zhihu.com/question/37623307" target="_blank" rel="noopener">参考阅读：TDD（测试驱动开发）是否已死？</a></p>
-<p>由于不涉及非常复杂的代码，所有只需要了解最为常见的<strong>单元测试</strong>即可。</p>
-<hr>
-<p>假设我们写了一个函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bin_search</span><span class="params">(lst, target)</span>:</span></span><br><span class="line">    i, j = <span class="number">0</span>, len(lst)<span class="number">-1</span></span><br><span class="line">    <span class="keyword">while</span> i &lt;= j:</span><br><span class="line">        mid = (i + j)//<span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> target == lst[mid]:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">        <span class="keyword">elif</span> target &lt; lst[mid]:</span><br><span class="line">            j = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            i = mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
-
-<p>这个函数如果是正确的话，那么会返回列表（数组）中target元素的下标值；如果列表不存在这个元素就返回-1。</p>
-<hr>
-<p>如何测试这段代码呢？</p>
-<p>我们可以写出下面的单元测试代码？</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestBinarySearch</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_common</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.assertEqual(bin_search([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="number">1</span>), <span class="number">1</span>)</span><br><span class="line">        self.assertEqual(bin_search([<span class="number">0</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>], <span class="number">0</span>), <span class="number">0</span>)</span><br><span class="line">        self.assertEqual(bin_search([<span class="number">0</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>], <span class="number">8</span>), <span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main() <span class="comment"># 启动测试</span></span><br></pre></td></tr></table></figure>
-
-<p>Python的提供了单元测试类<code>unittest</code>。想要进行进行单元测试，我们需要从类<code>unittest.TestCase</code>派生出子类，然后在子类中定义以<code>test</code>开头的方法(<code>method</code>)，再在方法里完成各种测试。每一个测试，都可以视为对被测试对象的一个要求。<code>self.assertEqual(a, b)</code>是断言 <code>a b</code> 要相等。 </p>
-<hr>
-<p>Python提供了很多断言方法</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Checks that</th>
-<th>New in</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://docs.python.org/3.7/library/unittest.html#unittest.TestCase.assertEqual" target="_blank" rel="noopener"><code>assertEqual(a, b)</code></a></td>
-<td><code>a == b</code></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://docs.python.org/3.7/library/unittest.html#unittest.TestCase.assertNotEqual" target="_blank" rel="noopener"><code>assertNotEqual(a, b)</code></a></td>
-<td><code>a != b</code></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://docs.python.org/3.7/library/unittest.html#unittest.TestCase.assertTrue" target="_blank" rel="noopener"><code>assertTrue(x)</code></a></td>
-<td><code>bool(x) is True</code></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://docs.python.org/3.7/library/unittest.html#unittest.TestCase.assertFalse" target="_blank" rel="noopener"><code>assertFalse(x)</code></a></td>
-<td><code>bool(x) is False</code></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://docs.python.org/3.7/library/unittest.html#unittest.TestCase.assertIs" target="_blank" rel="noopener"><code>assertIs(a, b)</code></a></td>
-<td><code>a is b</code></td>
-<td>3.1</td>
-</tr>
-<tr>
-<td><a href="https://docs.python.org/3.7/library/unittest.html#unittest.TestCase.assertIsNot" target="_blank" rel="noopener"><code>assertIsNot(a, b)</code></a></td>
-<td><code>a is not b</code></td>
-<td>3.1</td>
-</tr>
-<tr>
-<td><a href="https://docs.python.org/3.7/library/unittest.html#unittest.TestCase.assertIsNone" target="_blank" rel="noopener"><code>assertIsNone(x)</code></a></td>
-<td><code>x is None</code></td>
-<td>3.1</td>
-</tr>
-<tr>
-<td><a href="https://docs.python.org/3.7/library/unittest.html#unittest.TestCase.assertIsNotNone" target="_blank" rel="noopener"><code>assertIsNotNone(x)</code></a></td>
-<td><code>x is not None</code></td>
-<td>3.1</td>
-</tr>
-<tr>
-<td><a href="https://docs.python.org/3.7/library/unittest.html#unittest.TestCase.assertIn" target="_blank" rel="noopener"><code>assertIn(a, b)</code></a></td>
-<td><code>a in b</code></td>
-<td>3.1</td>
-</tr>
-<tr>
-<td><a href="https://docs.python.org/3.7/library/unittest.html#unittest.TestCase.assertNotIn" target="_blank" rel="noopener"><code>assertNotIn(a, b)</code></a></td>
-<td><code>a not in b</code></td>
-<td>3.1</td>
-</tr>
-<tr>
-<td><a href="https://docs.python.org/3.7/library/unittest.html#unittest.TestCase.assertIsInstance" target="_blank" rel="noopener"><code>assertIsInstance(a, b)</code></a></td>
-<td><code>isinstance(a, b)</code></td>
-<td>3.2</td>
-</tr>
-<tr>
-<td><a href="https://docs.python.org/3.7/library/unittest.html#unittest.TestCase.assertNotIsInstance" target="_blank" rel="noopener"><code>assertNotIsInstance(a, b)</code></a></td>
-<td><code>not isinstance(a, b)</code></td>
-<td>3.2</td>
-</tr>
-</tbody></table>
-<p>通过这些断言方法，我们可以完成对待测试函数的测试。</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2019/12/25/unittest_demo/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -258,7 +173,7 @@
       <ul>
         
           <li>
-            <a href="/2019/12/25/unittest_demo/">unittest_demo</a>
+            <a href="/2019/12/25/unittest_demo/">Unittest_demo</a>
           </li>
         
           <li>
