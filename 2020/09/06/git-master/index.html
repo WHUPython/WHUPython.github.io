@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Git - Peace&amp;Love | Yet A Python Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Git 使用便捷上手册  Git Rebase &#x2F;  StageState&#x2F;Stash Git Reset https:&#x2F;&#x2F;github.com&#x2F;k88hudson&#x2F;git-flight-rules&#x2F;blob&#x2F;master&#x2F;README_zh-CN.md https:&#x2F;&#x2F;dangitgit.com&#x2F; https:&#x2F;&#x2F;developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Learn&#x2F;To">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git - Peace&amp;Love">
+<meta property="og:url" content="http://github.com/whupython/2020/09/06/git-master/index.html">
+<meta property="og:site_name" content="Yet A Python Group">
+<meta property="og:description" content="Git 使用便捷上手册  Git Rebase &#x2F;  StageState&#x2F;Stash Git Reset https:&#x2F;&#x2F;github.com&#x2F;k88hudson&#x2F;git-flight-rules&#x2F;blob&#x2F;master&#x2F;README_zh-CN.md https:&#x2F;&#x2F;dangitgit.com&#x2F; https:&#x2F;&#x2F;developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Learn&#x2F;To">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://github.com/whupython/2020/09/06/Weekly/resources/20201127/rebase-raw.jpg">
+<meta property="og:image" content="http://github.com/whupython/2020/09/06/Weekly/resources/20201127/rebase-result.jpg">
+<meta property="og:image" content="http://github.com/whupython/2020/09/06/Weekly/resources/20201127/git-copy-commits.jpg">
+<meta property="og:image" content="http://github.com/whupython/2020/09/06/Weekly/resources/20201127/rebase-onto-raw.jpg">
+<meta property="og:image" content="http://github.com/whupython/2020/09/06/Weekly/resources/20201127/rebase-onto-result.jpg">
+<meta property="og:image" content="https://i.stack.imgur.com/cZkcV.jpg">
+<meta property="og:image" content="https://i.stack.imgur.com/NxTUz.png">
+<meta property="og:image" content="http://github.com/whupython/2020/09/06/Weekly/resources/20201127/rebase-raw.jpg">
+<meta property="article:published_time" content="2020-09-06T01:54:34.000Z">
+<meta property="article:modified_time" content="2021-06-20T04:08:50.317Z">
+<meta property="article:tag" content="方法">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://github.com/whupython/2020/09/06/Weekly/resources/20201127/rebase-raw.jpg">
+  
+    <link rel="alternate" href="https://shang.qq.com/wpa/qunwpa?idkey=b1f60f79b3ca3529de11e4d2eb36924a35f57ad3419b3a7563bbaad8043ba008" title="Yet A Python Group" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Yet A Python Group</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Python小组</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/categories/Python">Python</a>
+        
+          <a class="main-nav-link" href="/categories/philosophy">随想</a>
+        
+          <a class="main-nav-link" href="/categories/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7">电脑技巧</a>
+        
+          <a class="main-nav-link" href="/intro-python">测试page</a>
+        
+          <a class="main-nav-link" href="/archives">历史文章</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="https://shang.qq.com/wpa/qunwpa?idkey=b1f60f79b3ca3529de11e4d2eb36924a35f57ad3419b3a7563bbaad8043ba008" target="_blank" rel="noopener" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://github.com/whupython"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-git-master" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/06/git-master/" class="article-date">
+  <time datetime="2020-09-06T01:54:34.000Z" itemprop="datePublished">2020-09-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git - Peace&amp;Love
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+<!-- Table of Contents -->
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git-常用命令"><span class="toc-number">1.</span> <span class="toc-text">Git 常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#add"><span class="toc-number">1.1.</span> <span class="toc-text">add</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#commit"><span class="toc-number">1.2.</span> <span class="toc-text">commit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#checkout"><span class="toc-number">1.3.</span> <span class="toc-text">checkout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reset"><span class="toc-number">1.4.</span> <span class="toc-text">reset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#diff"><span class="toc-number">1.5.</span> <span class="toc-text">diff</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#status"><span class="toc-number">1.6.</span> <span class="toc-text">status</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#merge"><span class="toc-number">1.7.</span> <span class="toc-text">merge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#log"><span class="toc-number">1.8.</span> <span class="toc-text">log</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stash"><span class="toc-number">1.9.</span> <span class="toc-text">stash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rebase"><span class="toc-number">1.10.</span> <span class="toc-text">rebase</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rebase-1"><span class="toc-number">1.10.1.</span> <span class="toc-text">rebase</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#abort"><span class="toc-number">1.10.2.</span> <span class="toc-text">abort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压缩提交"><span class="toc-number">1.10.3.</span> <span class="toc-text">压缩提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#粘贴提交"><span class="toc-number">1.10.4.</span> <span class="toc-text">粘贴提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–onto"><span class="toc-number">1.10.5.</span> <span class="toc-text">–onto</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#revert"><span class="toc-number">1.11.</span> <span class="toc-text">revert</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#blame"><span class="toc-number">1.12.</span> <span class="toc-text">blame</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#remote"><span class="toc-number">1.13.</span> <span class="toc-text">remote</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#push"><span class="toc-number">1.14.</span> <span class="toc-text">push</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pull"><span class="toc-number">1.15.</span> <span class="toc-text">pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bisect"><span class="toc-number">1.16.</span> <span class="toc-text">bisect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-Pointer"><span class="toc-number">1.17.</span> <span class="toc-text">Git Pointer</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git-合作注意事项"><span class="toc-number">2.</span> <span class="toc-text">Git 合作注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-states-in-Git"><span class="toc-number">2.1.</span> <span class="toc-text">3 states in Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#merge-rebase的讨论"><span class="toc-number">2.2.</span> <span class="toc-text">merge rebase的讨论</span></a></li></ol></li></ol>
+  </div>
+
+
+
+        <p>Git 使用便捷上手册</p>
+<ul>
+<li>Git Rebase /  StageState/Stash</li>
+<li>Git Reset</li>
+<li><a href="https://github.com/k88hudson/git-flight-rules/blob/master/README_zh-CN.md">https://github.com/k88hudson/git-flight-rules/blob/master/README_zh-CN.md</a></li>
+<li><a href="https://dangitgit.com/" target="_blank" rel="noopener">https://dangitgit.com/</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/Tools_and_testing/GitHub" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Learn/Tools_and_testing/GitHub</a></li>
+</ul>
+<p>git push origin newbranch</p>
+<ul>
+<li>推送本地newbranch 到origin 上</li>
+</ul>
+<p>git 有三个区域：工作区、暂存区、版本库(working/staging/repository)。</p>
+<a id="more"></a>
+
+
+
+<h1 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h1><h2 id="add"><a href="#add" class="headerlink" title="add"></a>add</h2><p> 从工作区(working directory/tree)添加文件到暂存区(staging area，index)</p>
+<h2 id="commit"><a href="#commit" class="headerlink" title="commit"></a>commit</h2><h2 id="checkout"><a href="#checkout" class="headerlink" title="checkout"></a>checkout</h2><p>创建一个本地分支dev并切换到该分支, git <strong>checkout -b</strong> dev</p>
+<h2 id="reset"><a href="#reset" class="headerlink" title="reset"></a>reset</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- A - B - C (master)</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p><code>reset --soft B</code>, <code>master</code> (and thus <code>HEAD</code>) now points to <code>B</code>, but the index still has the changes from <code>C</code>; <code>git status</code> will show them as staged. So if we run <code>git commit</code> at this point, we’ll get a new commit with the same changes as <code>C</code>.</p>
+</li>
+<li><p><code>git reset --mixed B``master</code> and <code>HEAD</code> point to B, but this time the index is also modified to match <code>B</code>. [git commit 会有什么输出结果？]</p>
+<p>If we run <code>git commit</code> at this point, nothing will happen since the index matches <code>HEAD</code>. We still have the changes in the working directory, but since they’re not in the index, <code>git status</code> shows them as unstaged. </p>
+</li>
+<li><p><code>--hard</code>, 与–mixed类似，除此之外它还恢复工作区内容</p>
+<p><code>git reset --hard B</code>   the changes added in <code>C</code>, as well as any uncommitted changes you have, will be removed, and the files in your working copy will match commit <code>B</code>.(在C处已add的文件修改也会被discard)撤销工作区和暂存区的任何改变，<strong>动作不可逆，危险</strong></p>
+</li>
+</ul>
+<h2 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h2><p>git diff origi new, outputs  new 相对于origi的变动</p>
+<p><em>git diff</em>  : 比较 暂存区 相对于 工作区 的改动</p>
+<p><em>git diff –stage</em> : 比较 仓库 相对于 暂存区的改动</p>
+<p><em>git diff commit1 commit2</em> : 比较commit2相对于commit1的改动</p>
+<p><em>git show commit1</em>, 比较commit1相对于其父母提交(commit)的改动</p>
+<h2 id="status"><a href="#status" class="headerlink" title="status"></a>status</h2><p>查看三个区的状态，无参数时比较的暂存区与工作区的异同</p>
+<h2 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h2><p>git merge</p>
+<p><em>git merge branch</em>, 将branch分支合并到当前分支</p>
+<p><em>fast-merge</em>,三方合并as a commit</p>
+<h2 id="log"><a href="#log" class="headerlink" title="log"></a>log</h2><p>git log [–graph] [–oneline]</p>
+<ul>
+<li>当前commit及之前的commit log提交日志</li>
+<li>如果要查看（当前节点之后）的提交日志，可以使用 git reflog</li>
+</ul>
+<h2 id="stash"><a href="#stash" class="headerlink" title="stash"></a>stash</h2><p>git stash - Stash the changes in a dirty working directory away</p>
+<p><em>git stash</em> (== git stash push)</p>
+<p><em>git stash pop</em> : 从存储中弹出最上面的stash，并应用在当前工作区上，再删除此stash</p>
+<p><em>git stash list</em>  ： 列出当前存储的 stash</p>
+<p><em>git stash save*：同 git stash,但是可以添加一些注释<br>*git stash apply</em> : 将堆栈中的内容应用到当前目录而不删除<br><em>git stash drop Name</em> : 从堆栈中移除某个指定stash<br><em>git stash show</em> : 查看堆栈中最新的stash与当前目录差异<br><em>git stash branch</em> : 从最新的stash创建分支  </p>
+<h2 id="rebase"><a href="#rebase" class="headerlink" title="rebase"></a>rebase</h2><blockquote>
+<p>什么是base？base, (basic/basement),提交commit的base，就像树根，是一个分支的基础。一个分支的基础又该怎么理解呢？就是一个分支从哪里衍生而来。所以它的基础就是它之前的提交。</p>
+<p>到这里，变基，改变基础，的意思就很明显了。就是改变之前的提交。</p>
+<p>那怎么改变之前的提交呢？有多种改变方式，一种简单的情况：请设想分支1和分支2从一个共同的提交b像树杈一样分离，此时提交b为分支1 和 分支2共同的基。想改变分支2的基，使分支1也为分支2的基。</p>
+</blockquote>
+<blockquote>
+<p>git rebase(变基，改变commit的根基）内容上看起来就像是把分支的基础从一个commit更改为另一个commit</p>
+</blockquote>
+<p>The primary reason for rebasing is to <strong>maintain a linear project history</strong>. 维护线性历史</p>
+<p>变基是集成<strong>上游</strong>改变到<strong>本地</strong>仓库的一般方式。如果用merge的话,每次想看远程仓库的改变都会有多余的merge commit。变基的意思就像是，我想基于其他人的改变来做我的改变。</p>
+<hr>
+<h3 id="rebase-1"><a href="#rebase-1" class="headerlink" title="rebase"></a>rebase</h3><p><a href="https://medium.com/@gabriellamedas/git-rebase-and-git-rebase-onto-a6a3f83f9cce" target="_blank" rel="noopener">link</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase [&lt;upstream&gt;] [&lt;branch&gt;]</span><br></pre></td></tr></table></figure>
+
+<p><img src="./../Weekly/resources/20201127/rebase-raw.jpg" alt="img"></p>
+<p><em>git rebase master other_branch</em>, 将other_branch分支的基切换为master指向的commit  </p>
+<p><img src="./../Weekly/resources/20201127/rebase-result.jpg" alt="img"></p>
+<hr>
+<p><em>git rebase –onto server client</em>, 将client区别于server分支的提交在master分支上面重放一次，完成之后client分支移动到master分支 master指针之后。</p>
+<p><em>git rebase branch</em>，把当前分支区别于master分支的提交在branch分支上重放一次，当前分支指针也就变动到了branch分支上</p>
+<p><em>git pull –rebase</em>，将远程分支来下来，并且使远程分支为本地的改变之基</p>
+<h3 id="abort"><a href="#abort" class="headerlink" title="abort"></a>abort</h3><p><em>git rebase –abort</em></p>
+<h3 id="压缩提交"><a href="#压缩提交" class="headerlink" title="压缩提交"></a>压缩提交</h3><ul>
+<li><p>合并提交/压缩提交</p>
+<p><code>git rebase startCommit eCommit</code>: 以sCommit为基进行变基</p>
+<p>将eCommit的基调整为startCommit：压缩(startCommit, endCommit]之间的提交为一个，需要手动选择对(startCommit, endCommit]间的每一个提交的操作方式。</p>
+</li>
+</ul>
+<h3 id="粘贴提交"><a href="#粘贴提交" class="headerlink" title="粘贴提交"></a>粘贴提交</h3><ul>
+<li><p>将一段commits粘贴到另一个分支上</p>
+<p>git rebase sCommit endCommit –onto branchName </p>
+<p>将 (start commit, end commit] 之间的commits拷贝到 分支bName后面，并且把bName分支移动到最后？</p>
+<p><img src="./../Weekly/resources/20201127/git-copy-commits.jpg" alt="img"></p>
+<p>欲完成上述功能，执行命令:<span style="color:purple"><code>git rebase b^ e --onto master</code></span></p>
+</li>
+</ul>
+<p style="color:red">如果提交存在于<strong>你的仓库之外</strong>，而别人可能基于这些提交进行开发，那么不要执行变基。</p>
+
+<p>As we’ve discussed previously in <a href="https://www.atlassian.com/git/tutorials/rewriting-history" target="_blank" rel="noopener">rewriting history</a>, you should never rebase commits once they’ve been pushed to a public repository. The rebase would replace the old commits with new ones and it would look like that part of your project history abruptly vanished.</p>
+<hr>
+<h3 id="–onto"><a href="#–onto" class="headerlink" title="–onto"></a>–onto</h3><p><img src="./../Weekly/resources/20201127/rebase-onto-raw.jpg" alt="img"></p>
+<p><strong>git rebase [–onto <new base>] [<upstream> [<branch>]]</strong></p>
+<p><em>git rebase –onto master branch_one branch_two</em>，将b2区别于b1的提交在master上面重放一次，并且将b2移动到最新的提交上面</p>
+<p><img src="./../Weekly/resources/20201127/rebase-onto-result.jpg" alt="img"></p>
+<h2 id="revert"><a href="#revert" class="headerlink" title="revert"></a>revert</h2><p><em>git revert aCommit</em> : 在产生的新提交(commit)中，撤销自某个aCommit引入的所有改变。</p>
+<p>之后ref指针更新到产生的新提交。保持提交历史不变。</p>
+<hr>
+<p>需要解决冲突，git会将aCommit前后分支的内容体现在产生的冲突的文档中。</p>
+<p>常用选项options:</p>
+<ul>
+<li>-e –edit: 默认，打开编辑器以编辑提交信息</li>
+<li>–no-edit: 上面的反面</li>
+<li>-n –no-commit: 这个选项会将自aCommit以来所引入的所有修改都放在工作区和暂存区中。</li>
+</ul>
+<hr>
+<ul>
+<li><p>这个东西和我有什么关联？</p>
+<p>通过学习这个命令，会提高我利用git进行代码历史管理的能力</p>
+</li>
+<li><p>命令可能运用场景是什么？</p>
+<p>当我把历史已经提交到远程，其他人可能已经基于历史做了改变。为了不修改历史，可以使用revert命令将代码回退到特定提交。</p>
+</li>
+<li><p>有什么辅助东西可以帮我更好地运用这个东西吗？</p>
+<p>撤销命令-已经提交到公开仓库-不修改历史</p>
+</li>
+</ul>
+<h2 id="blame"><a href="#blame" class="headerlink" title="blame"></a>blame</h2><p><em>git blame</em> : 列出文件每一行上次修改commit及作者</p>
+<p>可以在历史中追踪某段代码什么时候从文件中添加、删除、移动、替换。</p>
+<p><code>git log -S&#39;blame-usage&#39;</code></p>
+<h2 id="remote"><a href="#remote" class="headerlink" title="remote"></a>remote</h2><p><code>git remote -v</code></p>
+<p><code>git remote remove origin</code> : rm 远程origin</p>
+<p><code>git remote add origin master git:SSH-link</code></p>
+<h2 id="push"><a href="#push" class="headerlink" title="push"></a>push</h2><p>推送本地分支到远程仓库（远程仓库无此分支） git push –set-upstream  origin dev</p>
+<p>从远程拉取一个本地不存在的分支：git checkout -b 本地分支名 origin/远程分支名</p>
+<p><em>git checkout afile</em>，可以检出仓库中的一个文件，删除掉在工作区所做改变</p>
+<h2 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h2><p><em>git pull origin master</em> &lt;=&gt; <em>git fetch origin</em> , then  <em>git merge master origin/master</em></p>
+<h2 id="bisect"><a href="#bisect" class="headerlink" title="bisect"></a>bisect</h2><h2 id="Git-Pointer"><a href="#Git-Pointer" class="headerlink" title="Git Pointer"></a>Git Pointer</h2><p>git pointer GIT中的指针 HEAD/ORIGIN</p>
+<p>HEAD, 指向当前分支的上一次提交 last commit</p>
+<h1 id="Git-合作注意事项"><a href="#Git-合作注意事项" class="headerlink" title="Git 合作注意事项"></a>Git 合作注意事项</h1><ol>
+<li>每天第一次修改文件时，确保已pull远程的文件并且merge。</li>
+<li><strong>重要</strong>的提交（commit），注释的信息详细一点。<ol>
+<li>第一行是提交的整体描述信息</li>
+<li>再空一行，第三行开始记录更为细致的提交信息</li>
+</ol>
+</li>
+</ol>
+<p><a href="https://www.cnblogs.com/tsingke/p/10853936.html" target="_blank" rel="noopener">https://www.cnblogs.com/tsingke/p/10853936.html</a>)</p>
+<h2 id="3-states-in-Git"><a href="#3-states-in-Git" class="headerlink" title="3 states in Git"></a>3 states in Git</h2><p><a href="https://stackoverflow.com/questions/3689838/whats-the-difference-between-head-working-tree-and-index-in-git" target="_blank" rel="noopener">https://stackoverflow.com/questions/3689838/whats-the-difference-between-head-working-tree-and-index-in-git</a></p>
+<p><img src="https://i.stack.imgur.com/cZkcV.jpg" alt="img"></p>
+<blockquote>
+<p>Notes:</p>
+</blockquote>
+<ol>
+<li>the <strong>workspace</strong> is the directory tree of (source) files that you see and edit.</li>
+</ol>
+<ol>
+<li><p>The <strong>index</strong> is a single, large, binary file in <code>&lt;baseOfRepo&gt;/.git/index</code>, which lists all files in the current branch, their <em>sha1</em> checksums, time stamps and the file name – it is not another directory with a copy of files in it. 待提交的修改会被放在index中</p>
+<ol>
+<li>The <strong>local repository</strong> is a hidden directory (<code>.git</code>) including an <code>objects</code> directory containing all versions of every file in the repo (local branches and copies of remote branches) as a compressed “blob” file.</li>
+</ol>
+<p>Don’t think of the four ‘disks’ represented in the image above as separate copies of the repo files.</p>
+</li>
+</ol>
+<p><img src="https://i.stack.imgur.com/NxTUz.png" alt="img"></p>
+<p>In the above image “working directory” is the same as “working tree”, the “staging area” is an alternate name for git “index”, and <strong>HEAD</strong> points to currently checked out branch, which tip points to last commit in the “git directory (repository)”</p>
+<p>Note that <code>git commit -a</code> would stage changes and commit in one step.</p>
+<p><strong>HEAD</strong> is a pointer to the branch or commit that you last checked out, and which will be the parent of a new commit if you make it. For instance, if you’re on the <code>master</code> branch, then <code>HEAD</code> will point to <code>master</code>, and when you commit, that new commit will be a descendent of the revision that <code>master</code> pointed to, and <code>master</code> will be updated to point to the new commit.</p>
+<h2 id="merge-rebase的讨论"><a href="#merge-rebase的讨论" class="headerlink" title="merge rebase的讨论"></a>merge rebase的讨论</h2><p>merge用于合并两个分支；rebase用于将一个分支的基改为另一个，如下图，命令git rebase master other-branch，将把other-branch的基从C变为E。</p>
+<p><img src="./../Weekly/resources/20201127/rebase-raw.jpg" alt="img"></p>
+<p>因此rebase将更改历史，提交的公开仓库的分支尽量不要使用。</p>
+<p>而merge是增量改变，不会触碰提交历史，可以在公开分支上面使用。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://github.com/whupython/2020/09/06/git-master/" data-id="ckq4obj2000088ss3e656fxe3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/06/PyramidPrinciple/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          金子塔原理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/06/ScrumKeyNotes/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Scrum</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/06/DISC%E9%AB%98%E6%95%88%E6%B2%9F%E9%80%9A/">DISC-高效沟通</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/06/Cooperation/">如何倾听不赞同的观点</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/06/DebugControllMethods/">调试</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/06/MDNonLearning/">高效学习(Effective Learning)-MDN</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/06/PyramidPrinciple/">金子塔原理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/philosophy/">philosophy</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%88%E4%BD%9C/">合作</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%9D%E8%80%83/">思考</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%B9%E6%B3%95/">方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B2%9F%E9%80%9A/">沟通</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/">电脑技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RandomThoughts/" rel="tag">RandomThoughts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scrum/" rel="tag">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/disc/" rel="tag">disc</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hardlab/" rel="tag">hardlab</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%99%E4%BD%9C/" rel="tag">写作</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95/" rel="tag">开发方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E7%BB%B4/" rel="tag">思维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B2%9F%E9%80%9A/" rel="tag">沟通</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="tag">科学上网</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86/" rel="tag">金字塔原理</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/RandomThoughts/" style="font-size: 10px;">RandomThoughts</a> <a href="/tags/Scrum/" style="font-size: 10px;">Scrum</a> <a href="/tags/disc/" style="font-size: 13.33px;">disc</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hardlab/" style="font-size: 16.67px;">hardlab</a> <a href="/tags/%E5%86%99%E4%BD%9C/" style="font-size: 10px;">写作</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95/" style="font-size: 10px;">开发方法</a> <a href="/tags/%E6%80%9D%E7%BB%B4/" style="font-size: 10px;">思维</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 20px;">方法</a> <a href="/tags/%E6%B2%9F%E9%80%9A/" style="font-size: 10px;">沟通</a> <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" style="font-size: 10px;">科学上网</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">编程</a> <a href="/tags/%E8%B0%83%E8%AF%95/" style="font-size: 10px;">调试</a> <a href="/tags/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86/" style="font-size: 10px;">金字塔原理</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Yet A Python Group<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/categories/Python" class="mobile-nav-link">Python</a>
+  
+    <a href="/categories/philosophy" class="mobile-nav-link">随想</a>
+  
+    <a href="/categories/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7" class="mobile-nav-link">电脑技巧</a>
+  
+    <a href="/intro-python" class="mobile-nav-link">测试page</a>
+  
+    <a href="/archives" class="mobile-nav-link">历史文章</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

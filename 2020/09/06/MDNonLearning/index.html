@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>高效学习(Effective Learning)-MDN | Yet A Python Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="It is great that you are putting some time into learning a new set of skills, but there are good practices to employ that will make your learning more effective. There also are times when you’ll get s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高效学习(Effective Learning)-MDN">
+<meta property="og:url" content="http://github.com/whupython/2020/09/06/MDNonLearning/index.html">
+<meta property="og:site_name" content="Yet A Python Group">
+<meta property="og:description" content="It is great that you are putting some time into learning a new set of skills, but there are good practices to employ that will make your learning more effective. There also are times when you’ll get s">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-06T01:54:34.000Z">
+<meta property="article:modified_time" content="2021-06-20T04:08:25.335Z">
+<meta property="article:tag" content="方法">
+<meta property="article:tag" content="disc">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="https://shang.qq.com/wpa/qunwpa?idkey=b1f60f79b3ca3529de11e4d2eb36924a35f57ad3419b3a7563bbaad8043ba008" title="Yet A Python Group" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Yet A Python Group</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Python小组</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/categories/Python">Python</a>
+        
+          <a class="main-nav-link" href="/categories/philosophy">随想</a>
+        
+          <a class="main-nav-link" href="/categories/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7">电脑技巧</a>
+        
+          <a class="main-nav-link" href="/intro-python">测试page</a>
+        
+          <a class="main-nav-link" href="/archives">历史文章</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="https://shang.qq.com/wpa/qunwpa?idkey=b1f60f79b3ca3529de11e4d2eb36924a35f57ad3419b3a7563bbaad8043ba008" target="_blank" rel="noopener" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://github.com/whupython"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-MDNonLearning" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/06/MDNonLearning/" class="article-date">
+  <time datetime="2020-09-06T01:54:34.000Z" itemprop="datePublished">2020-09-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B2%9F%E9%80%9A/">沟通</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      高效学习(Effective Learning)-MDN
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+<!-- Table of Contents -->
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Effective-learning"><span class="toc-number">1.</span> <span class="toc-text">Effective learning</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Different-learning-methods"><span class="toc-number">1.1.</span> <span class="toc-text">Different learning methods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Different-learning-materials"><span class="toc-number">1.2.</span> <span class="toc-text">Different learning materials</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Textual-articles"><span class="toc-number">1.2.1.</span> <span class="toc-text">Textual articles</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Videos"><span class="toc-number">1.2.2.</span> <span class="toc-text">Videos</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Interactive-code-playgrounds"><span class="toc-number">1.2.3.</span> <span class="toc-text">Interactive code playgrounds</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Making-a-plan"><span class="toc-number">1.3.</span> <span class="toc-text">Making a plan</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-goal-statement"><span class="toc-number">1.3.1.</span> <span class="toc-text">A goal statement</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-do-you-need-to-get-there"><span class="toc-number">1.3.2.</span> <span class="toc-text">What do you need to get there?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-much-time-and-money-will-it-take"><span class="toc-number">1.3.3.</span> <span class="toc-text">How much time and money will it take?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-many-hours-per-week-do-I-need-to-dedicate"><span class="toc-number">1.3.4.</span> <span class="toc-text">How many hours per week do I need to dedicate?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Staying-motivated"><span class="toc-number">1.4.</span> <span class="toc-text">Staying motivated</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Effective-problem-solving"><span class="toc-number">1.5.</span> <span class="toc-text">Effective problem solving</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Break-things-down-into-chunks"><span class="toc-number">1.5.1.</span> <span class="toc-text">Break things down into chunks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Learn-and-recognize-the-patterns"><span class="toc-number">1.5.2.</span> <span class="toc-text">Learn and recognize the patterns</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Getting-practice"><span class="toc-number">1.6.</span> <span class="toc-text">Getting practice</span></a></li></ol></li></ol>
+  </div>
+
+
+
+        <p>It is great that you are putting some time into learning a new set of skills, but there are good practices to employ that will make your learning more effective. There also are times when you’ll get stuck and feel frustrated — even professional web developers feel like this regularly — and it pays to know about the most effective ways to try and get help so you can progress in your work. This article provides some hints and tips in both of these areas that will help you get more out of learning web development, as well as further reading so you can find out more information about each sub-topic should you wish..</p>
+<a id="more"></a>s
+
+
+
+<h1 id="Effective-learning"><a href="#Effective-learning" class="headerlink" title="Effective learning"></a>Effective learning</h1><p>Let’s move straight on and think about effective learning.</p>
+<h2 id="Different-learning-methods"><a href="#Different-learning-methods" class="headerlink" title="Different learning methods"></a>Different learning methods</h2><p>It is interesting to consider that there are two main ways in which your brain learns things — <strong>focused</strong> and <strong>diffuse</strong> learning:</p>
+<ul>
+<li>Focused learning is what you might more traditionally associate with academic subjects. You concentrate deeply on a low-level topic and solving the specific problems that it brings. You are focused on a narrow area.</li>
+<li>Diffuse learning is more to do with high-level thinking around a wider area. You let your mind wander more widely, and seemingly make random connections between different things. This is more the kind of thinking you do while you are in the shower, or during a coffee break.</li>
+</ul>
+<p>From the studies that neuroscientists have done on brain activity, we have found out that you can’t really engage in both ways of learning — or thinking — at once. So which one should you choose? You might think that focused learning is better for studying, but in reality, <strong>both</strong> are very important.</p>
+<p>Focused thinking is great for concentrating hard on specific subjects, getting into deep problem solving, and improving your mastery of the techniques required — strengthening the neural pathways in your brain where that information is stored. It isn’t however very good at getting an understanding of “the big picture”, and unlocking new neural pathways when you are trying to understand new subjects or solve new problems that you haven’t come across before. </p>
+<p>For that, you need diffuse thinking. This is the opposite of focus — you let your brain wander around the wider landscape, searching around for connections you didn’t have before, touching on new things (or new combinations of things) that you can then focus on later, to strengthen them and start to really understand what they mean.</p>
+<p>This is why it is usually good to read some introductory material first to get a high-level understanding of an area before you leap into the specific details.</p>
+<p>It is also why you can sometimes get really stuck on a problem, but then figure out the answer when you go for a coffee break (or a walk). You might:</p>
+<ol>
+<li>Know how to fix problem A with tool A.</li>
+<li>Know how to fix problem B with tool B.</li>
+<li>Not know how to fix problem C.</li>
+</ol>
+<p>Let’s say you focus on problem C for a while and get frustrated because you can’t think how to solve it. But then after going on a walk to get some fresh air, you may well find that as your mind wanders, you suddenly make a connection between tool A and tool B, and realize that you can use them together to fix problem C! It isn’t always this simple, but it is also surprising how many times this does happen. This also highlights the importance of taking regular breaks when you are studying in front of the computer.</p>
+<h2 id="Different-learning-materials"><a href="#Different-learning-materials" class="headerlink" title="Different learning materials"></a>Different learning materials</h2><p>It is also worth looking at the different types of learning materials that are available, to see which ones are most effective for you to learn with.</p>
+<h3 id="Textual-articles"><a href="#Textual-articles" class="headerlink" title="Textual articles"></a>Textual articles</h3><p>You’ll find a lot of written articles on the web to teach you about web design. Like most of this course, for example. Some of the articles will be tutorials, to teach you a certain technique or important concept (such as “learn how to create a video player” or “Learn the CSS box model”), and some of the articles will be reference material, to allow you to look up details you may have forgotten (such as “what is the syntax of the CSS <code>background</code> property”?)</p>
+<p>MDN Web Docs is very good for both types — the area you are currently in is great for learning techniques and concepts, and we also have several giant reference sections allowing you to look up any syntax you can’t remember.</p>
+<p>There are also several other great resources on the web, some of which we’ll mention below.</p>
+<p><strong>Note</strong>: The above text should have given you an important fact — you aren’t expected to remember everything! Professional web developers use tools like MDN Web Docs to look up things they have forgotten all the time. As you’ll discover, learning web development is more about problem-solving and learning patterns than it is about learning lots of syntaxes.</p>
+<h3 id="Videos"><a href="#Videos" class="headerlink" title="Videos"></a>Videos</h3><p>There are also a number of sites that have video learning content on them. YouTube is an obvious one, with channels such as <a href="https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag" target="_blank" rel="noopener">Mozilla Layout Land</a>, <a href="https://www.youtube.com/MozillaDeveloper" target="_blank" rel="noopener">MozillaDeveloper</a>, and <a href="https://www.youtube.com/user/ChromeDevelopers/" target="_blank" rel="noopener">Google ChromeDevelopers</a> providing many useful videos. Many people prefer textual articles for more in-depth learning and reference material, and videos for quick explanations of concepts and new features, but it is really up to you what you prefer to learn from. There is no right and wrong answer here.</p>
+<h3 id="Interactive-code-playgrounds"><a href="#Interactive-code-playgrounds" class="headerlink" title="Interactive code playgrounds"></a>Interactive code playgrounds</h3><p>You might be the kind of person that prefers minimal instructions and would prefer to jump straight in and start playing with code. This is also a reasonable approach, and some learning sites tend to favor it. <a href="https://www.codecademy.com/" target="_blank" rel="noopener">Codecademy</a> for example is a learning site where the tutorials mainly consist of interactive code editors where you have to directly write code and see if the desired result was achieved.</p>
+<p>Many MDN Web docs reference pages provide interactive examples too, where you can alter the code and see how the live result changes. And there is also nothing wrong with creating your own code examples on your computer, or in an online code editor like <a href="https://jsbin.com/?html,css,js,output" target="_blank" rel="noopener">JSBin</a>, <a href="https://codepen.io/" target="_blank" rel="noopener">Codepen</a>, or <a href="https://glitch.com/" target="_blank" rel="noopener">Glitch</a>. In fact, you’ll be called to do so as part of this course when you are learning!</p>
+<p><strong>Note</strong>: Online code editors are also really useful for sharing code you’ve written, for example, if you are collaborating on learning with someone else who isn’t in the same location, or are sending it someone to ask for help with it. You can share the web address of the example with them so they can see it.</p>
+<p><strong>Note</strong>: You might favor one learning method over the others, but realistically a hybrid approach is probably what you will end up with. And you’ll probably come up with other methods than the three we covered above.</p>
+<h2 id="Making-a-plan"><a href="#Making-a-plan" class="headerlink" title="Making a plan"></a>Making a plan</h2><p>It is a good idea to create a plan to help you achieve what you want to achieve through your learning.</p>
+<h3 id="A-goal-statement"><a href="#A-goal-statement" class="headerlink" title="A goal statement"></a>A goal statement</h3><p>It sounds silly, but why not start with a single sentence that says what you want to achieve? The following have different scopes, but are all realistic and achievable:</p>
+<ul>
+<li>I want to become a professional web developer in two years’ time.</li>
+<li>I want to learn enough to build a website for my local amateur tennis club.</li>
+<li>I want to learn HTML and CSS so I can expand my job role to take over updating the content on our company website.</li>
+</ul>
+<p>The following are not quite as reasonable:</p>
+<ul>
+<li>I want to go from a complete beginner to becoming a senior web developer in three months.</li>
+<li>I want to start my own company and build a social network that will out-perform Facebook, in two years.</li>
+</ul>
+<h3 id="What-do-you-need-to-get-there"><a href="#What-do-you-need-to-get-there" class="headerlink" title="What do you need to get there?"></a>What do you need to get there?</h3><p>Once you’ve worked out your goal, it is a good idea to research what you’ll need to achieve the goal. For example:</p>
+<p>Materials I need:</p>
+<ul>
+<li>A computer</li>
+<li>Internet access</li>
+<li>Pens and paper</li>
+</ul>
+<p>Knowledge I need:</p>
+<ul>
+<li>How to use HTML, CSS, JavaScript, and associated tools and best practices to build web sites and web applications (we can definitely help you with this one!).</li>
+<li>How to get a domain, hosting, and use them to put a web site or application online.</li>
+<li>How to run a small business.</li>
+<li>How to advertise my business and attract clients.</li>
+</ul>
+<h3 id="How-much-time-and-money-will-it-take"><a href="#How-much-time-and-money-will-it-take" class="headerlink" title="How much time and money will it take?"></a>How much time and money will it take?</h3><p>Estimate the time and cost of getting these things. If you’ll need to work to earn money to buy the materials required, then the time to do that will have to be factored in. Once you have a time estimate, you can start to build a plan around your life.</p>
+<h3 id="How-many-hours-per-week-do-I-need-to-dedicate"><a href="#How-many-hours-per-week-do-I-need-to-dedicate" class="headerlink" title="How many hours per week do I need to dedicate?"></a>How many hours per week do I need to dedicate?</h3><p>Once you know what you need to do, and how long you think it’ll take you, you can start writing out a plan to follow to achieve your goal. It can be as simple as:</p>
+<p>“It’ll take me 500 hours to learn what I need to know, and I have a year to do it. If I assume 2 weeks of holiday, I’ll need to do work on this for 10 hours per week. I am free on evenings and weekends, so I’ll plan my time around those.”</p>
+<p>How much time you can spend on this of course depends on what your circumstances are. If you are at school, then you’ve got way more free time than if you have a job and children to provide for. It is still possible to achieve your goals, but you have to be realistic about how quickly you can do it.</p>
+<p>If you are doing a university or college course to learn web development, then most of this planning is done for you — lucky you!</p>
+<p>When you have worked out a weekly schedule then you should keep a record of what you manage to do each week in a simple spreadsheet or even in a notebook!</p>
+<p>Also, it might be a good idea to have some sub-goals worked out to allow you to keep track of where you are more easily. For example:</p>
+<ul>
+<li>HTML and CSS basics learned by summer</li>
+<li>JavaScript basics learned by December</li>
+<li>Example website project built by next April</li>
+<li>etc.</li>
+</ul>
+<p>Keep thinking about how much progress you are making, and adjust your plan if needs be.</p>
+<h2 id="Staying-motivated"><a href="#Staying-motivated" class="headerlink" title="Staying motivated"></a>Staying motivated</h2><p>It is hard to stay motivated, especially if you are trying to learn a complex skill like programming or web development. What follows are some tips to stay motivated and keep working:</p>
+<ul>
+<li><strong>Try to make your work environment as productive as possible</strong>. Get a comfortable desk and chair to work in, make sure you have enough light to see what you are doing, and try to include things that help you concentrate (e.g. mellow music, fragrances, whatever else you need). Don’t try to work in a room with distractions — for example a television on, with your friends watching football! Also, leave your mobile phone out of the room — most people are distracted by their phone a lot, so you should leave it somewhere else.</li>
+<li><strong>Take regular breaks</strong>. It is not good for your motivation to keep working away for hours with no break, especially if you are finding it hard or getting stuck on a problem. That just leads to frustration. It is often better to take a break, move around for a bit, then relax with a drink before getting back to work. And as we said earlier, the diffuse learning you do during that time can often help you to figure out a solution to the problem you were facing. It is also physically bad to work for too long without a break; looking at a monitor for too long can hurt your eyes, and sitting still for too long can be bad for your back or legs. We’d recommend taking a 15-minute break every hour to 90 minutes.</li>
+<li><strong>Eat, exercise, and sleep</strong>. Eat healthily, get regular exercise, and make sure you get enough sleep. This sounds obvious, but it is easy to forget when you get really into coding. Factor these essential ingredients into your schedule, and make sure you are not scheduling more learning time instead of these things.</li>
+<li><strong>Give yourself rewards</strong>. It’s true that <em>all work and no play makes Jack a dull boy</em>. You should try to schedule fun things to do after each learning session, which you’ll only have when the learning is over and complete. If you are really into gaming, for example, there is something quite motivating about saying “no gaming tonight unless I get through my 5 hours of learning”. Now all you need is willpower. Good luck!</li>
+<li><strong>Co-learning and demoing</strong>. This won’t be an option for everyone, but if at all possible try to learn alongside others. Again, this is easier if you are doing a college course on web development, but perhaps you could convince a friend to learn along with you, or find a local meetup or skill-sharing group? It is really useful and motivating to have someone to discuss ideas with and ask for help, and you should also take time to demo your work. Those shouts of appreciation will spur you on.</li>
+</ul>
+<h2 id="Effective-problem-solving"><a href="#Effective-problem-solving" class="headerlink" title="Effective problem solving"></a>Effective problem solving</h2><p>There is no one effective way to solve all problems (and learn all things) associated with web design and development, but there are some general bits of advice that will serve you well in most cases.</p>
+<h3 id="Break-things-down-into-chunks"><a href="#Break-things-down-into-chunks" class="headerlink" title="Break things down into chunks"></a>Break things down into chunks</h3><p>For a start, when you are trying to implement something specific and it seems really hard to get your head around, you should try to break it down into multiple smaller problems or chunks.</p>
+<p>For example, if you are looking at a task of “Build a simple two-column website”, you could break it down as follows:</p>
+<ul>
+<li>Create the HTML structure</li>
+<li>Work out basic site typography</li>
+<li>Work out a basic color scheme</li>
+<li>Implement a high-level layout — header, horizontal navigation menu, main content area with main and side columns, and footer</li>
+<li>Implement a horizontal navigation menu</li>
+<li>etc.</li>
+</ul>
+<p>Then you could break it down further. For example, “Implement horizontal navigation menu” could be written out as:</p>
+<ul>
+<li>Make a list of menu items that sit horizontally in a line.</li>
+<li>Remove unneeded defaults, like list spacing and bullet points.</li>
+<li>Style hover/focus/active states of menu items appropriately.</li>
+<li>Make the menu items equally spaced along the line.</li>
+<li>Give the menu items enough vertical spacing.</li>
+<li>Make sure the text is centered inside each menu item</li>
+<li>etc.</li>
+</ul>
+<p>Each of these problems doesn’t seem nearly as difficult to solve as the one big problem you had initially. Now you’ve just got to go through and solve them all!</p>
+<h3 id="Learn-and-recognize-the-patterns"><a href="#Learn-and-recognize-the-patterns" class="headerlink" title="Learn and recognize the patterns"></a>Learn and recognize the patterns</h3><p>As we said before, web design/programming is mostly about problem solving and patterns. Once you have written out what you’ll need to do to solve a specific problem, you can start to figure out what technology features to use to solve it. For example, professional web developers have created lots of horizontal navigation menus, so they’ll immediately start thinking of a solution like this:</p>
+<p>A nav menu is usually created from a list of links, something like:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>First menu item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Second menu item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Third menu item<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>etc.<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>To make all the items sit horizontally on a line, the easiest modern way is to use flexbox:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>To remove unneeded spacing and bullet points, we can do this:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">list-style-type</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>etc.</p>
+<p>If you are a complete beginner to web development, you’ll have to do some study and web searches and lookup solutions to such problems. If you are a professional web developer you’ll probably remember the last time you solved a similar problem, and only have to look up a few bits of the syntax that you forgot since then.</p>
+<p>When you find solutions to such problems, it is worth writing down notes on what you did, and keeping some minimal code examples in a directory somewhere so you can look back on previous work.</p>
+<p>In addition, the web has <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools" target="_blank" rel="noopener">developer tools</a> that allow you to look at the code used to build any site on the web. If you don’t have a solution to hand, one good research method is to find websites with similar features in the wild, and find out how they did it.</p>
+<p><strong>Note</strong>: Notice how above we talked about the problem we are trying to solve first, and the technology used to solve it second. This is pretty much always the best way to do it — don’t start with a cool new technology that you want to use, and try to shoehorn it into the use case.</p>
+<p><strong>Note</strong>: The simplest solution is often the best.</p>
+<h2 id="Getting-practice"><a href="#Getting-practice" class="headerlink" title="Getting practice"></a>Getting practice</h2><p>The more you practice solving a problem, the stronger your brain’s neural pathways are in that area, and the easier it becomes to recall the details and the logic of that particular problem.</p>
+<p>Keep tinkering with code and getting more practice. If you run out of problems to solve, look up some tests online, do some more courses, or ask your friends and family (or local school or church) if there is anything they’d like you to build for them.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://github.com/whupython/2020/09/06/MDNonLearning/" data-id="ckq4obj1w00038ss315f9hrn8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/disc/" rel="tag">disc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/06/DebugControllMethods/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          调试
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/06/PyramidPrinciple/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">金子塔原理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/06/DISC%E9%AB%98%E6%95%88%E6%B2%9F%E9%80%9A/">DISC-高效沟通</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/06/Cooperation/">如何倾听不赞同的观点</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/06/DebugControllMethods/">调试</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/06/MDNonLearning/">高效学习(Effective Learning)-MDN</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/06/PyramidPrinciple/">金子塔原理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/philosophy/">philosophy</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%88%E4%BD%9C/">合作</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%80%9D%E8%80%83/">思考</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%B9%E6%B3%95/">方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B2%9F%E9%80%9A/">沟通</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/">电脑技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RandomThoughts/" rel="tag">RandomThoughts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scrum/" rel="tag">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/disc/" rel="tag">disc</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hardlab/" rel="tag">hardlab</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%99%E4%BD%9C/" rel="tag">写作</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95/" rel="tag">开发方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%9D%E7%BB%B4/" rel="tag">思维</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B2%9F%E9%80%9A/" rel="tag">沟通</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="tag">科学上网</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B0%83%E8%AF%95/" rel="tag">调试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86/" rel="tag">金字塔原理</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/RandomThoughts/" style="font-size: 10px;">RandomThoughts</a> <a href="/tags/Scrum/" style="font-size: 10px;">Scrum</a> <a href="/tags/disc/" style="font-size: 13.33px;">disc</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hardlab/" style="font-size: 16.67px;">hardlab</a> <a href="/tags/%E5%86%99%E4%BD%9C/" style="font-size: 10px;">写作</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">学习</a> <a href="/tags/%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95/" style="font-size: 10px;">开发方法</a> <a href="/tags/%E6%80%9D%E7%BB%B4/" style="font-size: 10px;">思维</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 20px;">方法</a> <a href="/tags/%E6%B2%9F%E9%80%9A/" style="font-size: 10px;">沟通</a> <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" style="font-size: 10px;">科学上网</a> <a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 10px;">编程</a> <a href="/tags/%E8%B0%83%E8%AF%95/" style="font-size: 10px;">调试</a> <a href="/tags/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86/" style="font-size: 10px;">金字塔原理</a>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Yet A Python Group<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/categories/Python" class="mobile-nav-link">Python</a>
+  
+    <a href="/categories/philosophy" class="mobile-nav-link">随想</a>
+  
+    <a href="/categories/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7" class="mobile-nav-link">电脑技巧</a>
+  
+    <a href="/intro-python" class="mobile-nav-link">测试page</a>
+  
+    <a href="/archives" class="mobile-nav-link">历史文章</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
